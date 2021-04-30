@@ -1,40 +1,83 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-      <title>Hello Accusoft PDF Viewer via CDN</title>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!-- Prevent viewport scaling on mobile devices.
-           See https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
-      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-      <style>
-        /* Force the body height to the size of the browser. */
-        html,
-        body {
-          height: 100%;
-        }
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-        /* Size the viewer as desired. In this case, we fill the browser window. */
-        #viewer-container {
-          height: 100%;
-        }
-      </style>
+        <title>Roadmap 2021 Web Development</title>
+    </head>
+    <body>
 
-      <!-- Import the @accusoft/pdf-viewer bundle.js from an npm CDN mirror.
-           Adding this bundle.js makes window.Accusoft.PdfViewerControl available. -->
-      <script src="https://cdn.jsdelivr.net/npm/@accusoft/pdf-viewer@2/bundle.js"></script>
-  </head>
-  <body>
-    <!-- Define a container where the viewer will go. -->
-    <div id="viewer-container"></div>
-    <script>
-      // Create the viewer:
-      (async () => {
-        window.Accusoft.PdfViewerControl.create({
-          sourceDocument: 'docs/roadmap.pdf',
-          container: document.getElementById('viewer-container')
-        });
-      })();
-    </script>
-  </body>
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav__logo"><img src="assets/img/logo.png" width="50%" style="margin-top:20px" /></a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Beranda</a></li>
+                        <li class="nav__item"><a href="roadmap-en.html" class="nav__link">Roadmap #1</a></li>
+                        <li class="nav__item"><a href="roadmap-id.html" class="nav__link">Roadmap #2</a></li>
+
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--========== HOME ==========-->
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__data">
+                        <h1 class="home__title">Roadmap 2021</h1>
+                        <h2 class="home__subtitle">Web <br> Development</h2>
+                        <a href="roadmap-en.html" style="margin-bottom:10px" class="button">Roadmap CodeStackr</a>
+                        <a href="roadmap-id.html" class="button">Roadmap @sandhikagalih</a>
+                    </div>
+					
+					<div id="icon-container"></div>
+                </div>
+            </section>
+        </main>
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer section bd-container">
+            <p class="footer__copy">&#169; Lazuardi Fatahilah. All right reserved</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="assets/js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+		<script>
+			  var animation = bodymovin.loadAnimation({
+			  // animationData: { /* ... */ },
+			  container: document.getElementById('icon-container'), // required
+			  path: 'assets/img/animate/blogging.json', // required
+			  renderer: 'svg', // required
+			  loop: true, // optional
+			  autoplay: true, // optional
+			  name: "Demo Animation", // optional
+			});
+		</script>
+		
+    </body>
 </html>
